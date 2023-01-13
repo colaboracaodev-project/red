@@ -14,16 +14,22 @@
       <form id="form">
         <h1>Calculadora de Rescisão Trabalhista</h1>
   
-        <label for="salario">Salário atual:</label>
+        <label for="salario">Valor do meu último salário</label>
         <input type="number" placeholder="0,00" id="salario" required>
+
+        <label for="data-inicial">Comecei a trabalhar em</label>
+        <input type="date" id="data-inicial" required>
+
+        <label for="data-final">Meu último dia</label>
+        <input type="date" id="data-final" required>
   
-        <label for="dias-trabalhados">Dias trabalhados no mês:</label>
+        <label for="dias-trabalhados">Tenho férias vencias</label>
         <input type="number" id="dias-trabalhados" placeholder="Dias trabalhados no mês da recisão" required>
   
-        <label for="meses-trabalhados-ano">Meses trabalhados no ano:</label>
+        <label for="meses-trabalhados-ano">trabalhei no aviso prévio</label>
         <input type="number" id="meses-trabalhados-ano" placeholder="Meses trabalhados no ano da recisão" required>
   
-        <label for="total-de-meses-trabalhados">Tempo total de trabalho em meses:</label>
+        <label for="total-de-meses-trabalhados">Motivo da rescisão</label>
         <input type="number" id="total-de-meses-trabalhados" placeholder="Tempo total trabalhado na empresa em meses" required>
   
         <button type="button" id="botao" onclick="manipulaDOM()">Calcular</button>
