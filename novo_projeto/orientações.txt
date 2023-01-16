@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Coloque seu código nesta pasta....
 
+=======
+Coloque seu código nesta pasta....
+>>>>>>> a121dd7aa59bed6dc97969ca89ec79f595f89f00
