@@ -29,13 +29,13 @@ function manipulaDOM() {
     
 
     // valores a serem enviado no html
-    document.getElementById('resultado').innerHTML = total;
-    document.getElementById('saldoSalario').innerHTML = saldoSalario.toFixed(2);
-    document.getElementById('feriasVencidas').innerHTML = feriasVencidas.toFixed(2);
-    document.getElementById('feriasProporcionais').innerHTML = feriasProporcionais.toFixed(2);
-    document.getElementById('decimoTerceiroProporcional').innerHTML = decimoTerceiroProporcional.toFixed(2);
-    document.getElementById('avisoPrevioIndenizado').innerHTML = avisoPrevioIndenizado.toFixed(2);
-    document.getElementById('multaRescisoria').innerHTML = multaRescisoria.toFixed(2);
+    document.getElementById('resultado').innerHTML ="<label>Total a receber: </label><span>R$ </span> "+ total;
+    document.getElementById('saldoSalario').innerHTML ="<label>Salario proporcinal: </label><br><span>R$ </span> "+ saldoSalario.toFixed(2);
+    document.getElementById('feriasVencidas').innerHTML ="<label>Férias vencidas: </label><br><span>R$ </span> "+ feriasVencidas.toFixed(2);
+    document.getElementById('feriasProporcionais').innerHTML ="<label>Férias Proporcionais: </label><br><span>R$ </span> "+ feriasProporcionais.toFixed(2);
+    document.getElementById('decimoTerceiroProporcional').innerHTML ="<label>13º proporcional: </label><br><span>R$ </span> "+ decimoTerceiroProporcional.toFixed(2);
+    document.getElementById('avisoPrevioIndenizado').innerHTML ="<label>:Aviso prévio indenizado: </label><br><span>R$ </span> "+ avisoPrevioIndenizado.toFixed(2);
+    document.getElementById('multaRescisoria').innerHTML ="<label>Multa recisória: </label><br><span>R$ </span> "+ multaRescisoria.toFixed(2);
     
     
     
