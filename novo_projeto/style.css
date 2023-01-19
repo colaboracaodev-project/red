@@ -170,3 +170,42 @@ body .item.linha2.motivo .motivo-title{
   background: #8387db;
 }
 
+.resultados{
+  display: flex;
+  flex-direction: column;
+  background: #1C1C1E;
+  border: 4px solid #5CD65C;
+  border-radius: 8px;
+  padding-bottom: 32px;
+}
+
+.resultados #resultado{
+  font-size: 28px;
+  font-weight: 500;
+  text-align: center;
+  color: #FAFAFA;
+  margin: 32px 0 40px 0;
+}
+
+.especificacao{
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: 33% 67%;
+  justify-content: space-between;
+  grid-gap: 24px ;
+  margin: auto;
+}
+
+.item-especificacao{
+  text-align: left;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  width: 205px;
+  height: 60px;
+  padding: 10px 40px 10px 7px;
+  background: #0E0E0F;
+  border-left: 4px solid #5CD65C;
+  border-radius: 8px;
+}
+

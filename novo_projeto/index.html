@@ -88,18 +88,21 @@
         <button type="button" id="botao" onclick="manipulaDOM()">Novo cálculo</button>
         <button type="button" id="botao" onclick="manipulaDOM()">Calcular minha rescisão </button>
       </div>
-        <p class="display">R$ <span id="resultado"></span></p>
 
         <!-- Campo que exibirá outros resultados além de "total" -->
         <br>
         <br>
-        <span id="resultado"></span>
-        <span id="saldoSalario"></span>
-        <span id="avisoPrevioIndenizado"></span>
-        <span id="feriasVencidas"></span>
-        <span id="feriasProporcionais"></span>
-        <span id="decimoTerceiroProporcional"></span>
-        <span id="multaRescisoria"></span>
+        <div class="resultados">
+          <span id="resultado"></span>
+          <div class="especificacao">
+            <span class="item-especificacao"  id="saldoSalario"></span>
+            <span class="item-especificacao"  id="feriasVencidas"></span>
+            <span class="item-especificacao"  id="feriasProporcionais"></span>
+            <span class="item-especificacao"  id="avisoPrevioIndenizado"></span>
+            <span class="item-especificacao"  id="multaRescisoria"></span>
+            <span class="item-especificacao"  id="decimoTerceiroProporcional"></span>
+          </div>
+        </div>
       </form>
     </main>
   <script src="./script.js"></script>
