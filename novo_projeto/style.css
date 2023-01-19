@@ -27,7 +27,7 @@ header{
   align-items: center;
   justify-content: center;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 24px;
   margin-top: 31px;
 }
@@ -119,7 +119,6 @@ input[type=number]::-webkit-outer-spin-button {
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
-  
 }
 
 .checkbox input{
@@ -209,3 +208,77 @@ body .item.linha2.motivo .motivo-title{
   border-radius: 8px;
 }
 
+@media (max-width: 900px) {
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #0E0E0F;
+    color:#FAFAFA;
+    font-family: 'Inter', sans-serif;
+    padding: 32px 20px 20px 20px;
+  }
+
+  .title{
+    display: flex;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 40px;
+    align-items: center;
+  }
+  
+  .title img{
+    width: 40px;
+    height: 40px;
+  }
+
+  header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .container{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 15% 15% 15% 15%;
+    justify-content: space-between;
+    grid-gap: 24px;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 24px;
+  }
+  .buttons{
+    display: grid;
+    grid-template-columns: 80%;
+    grid-template-rows: 23% 23%;
+    margin-top: 130px;
+
+  }
+  .resultados{
+    display: flex;
+    flex-direction: column;
+    background: #1C1C1E;
+    border: 4px solid #5CD65C;
+    border-radius: 8px;
+  }
+  .especificacao{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows:min-content ;
+    justify-content: space-between;
+    grid-gap: 24px ;
+    margin: auto;
+    margin-bottom: 32px;
+  }
+}
