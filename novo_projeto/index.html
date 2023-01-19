@@ -4,6 +4,10 @@
 <!-- isso é um teste -->
 
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,52 +16,78 @@
 </head>
 <body>
   <header>
-    <main>
-      <form id="form">
-        <h1>Calculadora de Rescisão Trabalhista</h1>
-  
-        <label for="salario">Valor do meu último salário </label>
-        <input type="number" placeholder="0,000,00" id="salario" required>
-  
-        <label for="dias-trabalhados">Comecei a trabalhar em </label>
-        <input type="date" id="dias-trabalhados">
-  
-        <label for="meses-trabalhados-ano">Meu último dia foi </label>
-        <input type="date" id="meses-trabalhados-ano">
+    <img src="./assets/logo-colaboracao-dev.svg" alt="">
+    <h1>Colaboração DEV</h1>
+  </header>
+  <main>
+    <div class="team">
+      <h3> Team  <span class="red"> Red </span></h3>
+    </div>
 
-        <p>Tenho férias vencidas</p> 
-        <label for="resposta">Não</label>
-        <input type="checkbox"  id="resposta">
-        <label for="respostaa">Sim</label>
-        <input type="checkbox" id="respostaa">
+    <h2 class="title"> <img src="./assets/calculate.svg" alt=""> Calculadora de rescisão trabalhista </h2>
 
-        <p>Trabalhei no aviso prévio</p>
-        <label for="resposta1">Não</label>
-        <input type="checkbox" id="resposta1">
-        <label for="respostaa1">Sim</label>
-        <input type="checkbox" id="respostaa1">
-
-        <p>Motivo da rescisão</p>
-        <label for="demis-jus-causa">Demissão sem justa causa</label>
-        <input type="checkbox" id="demis-jus-causa">
-          <br>
-        <label for="demis-com-jus-causa">Demissão com justa causa</label>
-        <input type="checkbox" id="demis-com-jus-causa">
-          <br>
-        <label for="ped-demis">Pedido de demissão</label>
-        <input type="checkbox" id="ped-demis">
-          <br>
-        <label for="resc-reciproca">Rescisão recíproca</label>
-        <input type="checkbox" id="resc-reciproca">
-          <br>
-        <label for="demis-com-acordo">Demissão comum acordo</label>
-        <input type="checkbox" id="demis-com-acordo">
-          <br>
-          <br>
-        <button type="button" id="botao" onclick="manipulaDOM()">Calcular minha rescisão </button>
+    <form id="form">
+      <div class="container">
+        <div class="item linha1">
+          <label for="salario">Valor do meu último salário </label>
+          <input type="number" placeholder="0,000,00" id="salario" required>
+        </div>
+        <div class="item linha1">
+          <label for="dias-trabalhados">Comecei a trabalhar em </label>
+          <input type="date" id="dias-trabalhados">
+        </div>
+        <div class="item linha1">
+          <label for="meses-trabalhados-ano">Meu último dia foi </label>
+          <input type="date" id="meses-trabalhados-ano">
+        </div>
+        <div class="item linha2">
+          <p>Tenho férias vencidas</p> 
+          <p class="checkbox">
+            <input type="checkbox" id="resposta">
+            <label for="resposta"> Não</label>
+            <input type="checkbox" id="respostaa">
+            <label for="respostaa">Sim</label>
+          </p>
+        </div>
+        <div class="item linha2">
+          <p>Trabalhei no aviso prévio</p>
+          <p class="checkbox">
+            <input type="checkbox" id="resposta1">
+            <label for="resposta1">Não</label>
+            <input type="checkbox" id="respostaa1">
+            <label for="respostaa1">Sim</label>
+          </p>
+        </div>
+        <div class="item linha2 motivo">
+          <p class="motivo-title">Motivo da rescisão</p>
+          <p class="checkbox">
+            <input type="checkbox" id="demis-jus-causa">
+            <label for="demis-jus-causa">Demissão sem justa causa</label>
+          </p>
+          <p class="checkbox">
+            <input type="checkbox" id="demis-com-jus-causa">
+            <label for="demis-com-jus-causa">Demissão com justa causa</label>
+          </p>
+          <p class="checkbox">
+            <input type="checkbox" id="ped-demis">
+            <label for="ped-demis">Pedido de demissão</label>
+          </p>
+          <p class="checkbox">
+            <input type="checkbox" id="resc-reciproca">
+            <label for="resc-reciproca">Rescisão recíproca</label>
+          </p>
+          <p class="checkbox">
+            <input type="checkbox" id="demis-com-acordo">
+            <label for="demis-com-acordo">Demissão comum acordo</label>
+          </p>
+        </div>
+      </div>
+      <br>
             <br>
-            <br>
+      <div class="buttons">
         <button type="button" id="botao" onclick="manipulaDOM()">Novo cálculo</button>
+        <button type="button" id="botao" onclick="manipulaDOM()">Calcular minha rescisão </button>
+      </div>
         <p class="display">R$ <span id="resultado"></span></p>
 
         <!-- Campo que exibirá outros resultados além de "total" -->
@@ -72,7 +102,6 @@
         <span id="multaRescisoria"></span>
       </form>
     </main>
-  </header>
   <script src="./script.js"></script>
 </body>
 
