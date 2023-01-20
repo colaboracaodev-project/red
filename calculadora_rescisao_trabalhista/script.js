@@ -6,7 +6,7 @@ function manipulaDOM() {
     let mesesAno = parseFloat(document.getElementById("meses-trabalhados-ano").value);
     let totalMesesTrabalhados = parseFloat(document.getElementById("total-de-meses-trabalhados").value);
 
- //Transformando os valores de input em datas válidas de mês
+    //Transformando os valores de input em datas válidas de mês
     let dataInicial = new Date(document.getElementById('data-inicial').value);
     let dataFinal = new Date(document.getElementById('data-final').value);
 
@@ -26,18 +26,23 @@ function manipulaDOM() {
     function calculoDaDiferenca(dataInicial, dataFinal) {
         var dias = (dataFinal.getTime() - dataInicial.getTime()) / (1000 * 60 * 60 * 24);
         var meses = Math.floor(dias / 30);
-        diasEmMeses(dias);
 
         console.log('dias:', dias);
         console.log('meses:', meses);
         console.log(diasEmMeses(dias));
+
+        return {
+            dias: dias,
+            meses: meses,
+            diasEmMeses: diasEmMeses(dias)
+        };
     };
 
     //checagem para saber se as datas foram colocadas em ordem certa
-    dataFinal > dataInicial ? 
-        calculoDaDiferenca(dataInicial, dataFinal) : 
+    dataFinal > dataInicial ?
+        calculoDaDiferenca(dataInicial, dataFinal) :
         alert('As datas estão invertidas, coloque-as na ordem certa para executar o calculo');
- //Termino da transformação
+    //Termino da transformação
 
     let saldoSalario = calculaSaldoSalario(salarioDigitado, diasMes);
     console.log("saldoSalario: " + saldoSalario);
@@ -99,5 +104,49 @@ function manipulaDOM() {
         let total = saldoSalario + feriasVencidas + feriasProporcionais + decimoTerceiroProporcional + avisoPrevioIdenizado + multaRescisoria;
         console.log(typeof (total));
         return total.toFixed(2);
+    }
+
+    //Novas funções
+    let radioInput = document.querySelector('input[name="rescisao"]:checked').value
+    console.log('o selecionado foi: ', radioInput)
+
+    inputSelected(radioInput)
+
+    function inputSelected(elementInput) {
+        switch (elementInput) {
+            case 'demissaoSemJustaCausa':
+                return demissaoSemJustaCausa(saldoSalario, avisoPrevioIndenizado, decimoTerceiroProporcional, feriasVencidas, feriasProporcionais, multaRescisoria)
+            case 'demissaoComJustaCausa':
+                return demissaoComJustaCausa(saldoSalario, feriasVencidas);
+            case 'pedidoDemissao':
+                return pedidoDemissao(saldoSalario, decimoTerceiroProporcional, feriasVencidas, feriasProporcionais);
+            case 'rescisaoPorCulpaReciproca':
+                return rescisaoPorCulpaReciproca(saldoSalario, avisoPrevioIndenizado, decimoTerceiroProporcional, feriasVencidas, feriasProporcionais);
+            case 'demissaoPorComumAcordo':
+                return demissaoPorComumAcordo(saldoSalario, avisoPrevioIndenizado, decimoTerceiroProporcional, feriasVencidas, feriasProporcionais, multaRescisoria);
+            default:
+
+        }
+    }
+
+    function demissaoSemJustaCausa(saldoSalario, avisoPrevioIndenizado, decimoTerceiroProporcional, feriasVencidas, feriasProporcionais, multaRescisoria) {
+        let SemJustaCausa = saldoSalario + avisoPrevioIndenizado + decimoTerceiroProporcional + feriasVencidas + feriasProporcionais + multaRescisoria;
+        console.log('demissao SEM Justa Causa: ', SemJustaCausa)
+    }
+
+    function demissaoComJustaCausa(saldoSalario, feriasVencidas) {
+        return saldoSalario + feriasVencidas;
+    }
+
+    function pedidoDemissao(saldoSalario, decimoTerceiroProporcional, feriasVencidas, feriasProporcionais) {
+        return saldoSalario + decimoTerceiroProporcional + feriasVencidas + feriasProporcionais;
+    }
+
+    function rescisaoPorCulpaReciproca(saldoSalario, avisoPrevio, decimoTerceiroProporcional, feriasVencidas, feriasProporcionais, multaRescisoria) {
+        return saldoSalario + (avisoPrevio / 2) + (decimoTerceiroProporcional / 2) + feriasVencidas + (feriasProporcionais / 2) + multaRescisoria;
+    }
+
+    function demissaoPorComumAcordo(saldoSalario, avisoPrevio, decimoTerceiroProporcional, feriasVencidas, feriasProporcionais, multaRescisoria) {
+        return saldoSalario + (avisoPrevio / 2) + decimoTerceiroProporcional + feriasVencidas + feriasProporcionais + multaRescisoria;
     }
 }
